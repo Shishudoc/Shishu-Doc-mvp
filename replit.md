@@ -6,7 +6,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 
 ## Artifacts
 
-- **SHISHU SHIELD** (`artifacts/shishu-shield`) — Mobile-style React/Vite health app at `/`. 7 screens: Home Dashboard, Climate Health Forecast, AI Child Health Assistant (chat), Doctor Connect, Community Map, Alerts, Profile & Settings. Phone frame UI, Framer Motion animations, Inter font.
+- **SHISHU DOC** (`artifacts/shishu-shield`) — Mobile-style React/Vite health app at `/`. 7 screens: Home Dashboard, Climate Health Forecast, AI Child Health Assistant (chat), Doctor Connect, Community Map, Alerts, Profile & Settings. Phone frame UI, Framer Motion animations, Inter font.
 
 ## Stack
 

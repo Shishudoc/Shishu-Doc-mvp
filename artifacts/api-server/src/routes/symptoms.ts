@@ -12,10 +12,13 @@ const AnalyzeRequestBody = z.object({
     })
   ),
   childAge: z.string().optional(),
+  childName: z.string().optional(),
+  childGender: z.enum(["boy", "girl", "other"]).optional(),
+  childConditions: z.array(z.string()).optional(),
   language: z.enum(["en", "bn"]).optional().default("en"),
 });
 
-const SYSTEM_PROMPT_EN = `You are SHISHU SHIELD's AI Health Assistant — a warm, expert pediatric health advisor for parents in Bangladesh. You specialize in child health concerns in the context of Bangladesh's climate, endemic diseases (dengue, typhoid, cholera), and available healthcare resources.
+const SYSTEM_PROMPT_EN = `You are SHISHU DOC's AI Health Assistant — a warm, expert pediatric health advisor for parents in Bangladesh. You specialize in child health concerns in the context of Bangladesh's climate, endemic diseases (dengue, typhoid, cholera), and available healthcare resources.
 
 When a parent describes their child's symptoms, you must respond ONLY with a valid JSON object in this exact format:
 {
@@ -36,7 +39,7 @@ Rules:
 - Be aware of seasonal risks: dengue in monsoon, diarrhea in summer, respiratory infections in winter
 - Respond ONLY with valid JSON. No markdown. No explanation outside the JSON.`;
 
-const SYSTEM_PROMPT_BN = `আপনি SHISHU SHIELD-এর AI স্বাস্থ্য সহকারী — বাংলাদেশের অভিভাবকদের জন্য একজন উষ্ণ, বিশেষজ্ঞ শিশু স্বাস্থ্য পরামর্শদাতা। আপনি বাংলাদেশের জলবায়ু, স্থানীয় রোগ (ডেঙ্গু, টাইফয়েড, কলেরা) এবং স্বাস্থ্যসেবার প্রেক্ষাপটে শিশু স্বাস্থ্য সমস্যায় বিশেষজ্ঞ।
+const SYSTEM_PROMPT_BN = `আপনি SHISHU DOC-এর AI স্বাস্থ্য সহকারী — বাংলাদেশের অভিভাবকদের জন্য একজন উষ্ণ, বিশেষজ্ঞ শিশু স্বাস্থ্য পরামর্শদাতা। আপনি বাংলাদেশের জলবায়ু, স্থানীয় রোগ (ডেঙ্গু, টাইফয়েড, কলেরা) এবং স্বাস্থ্যসেবার প্রেক্ষাপটে শিশু স্বাস্থ্য সমস্যায় বিশেষজ্ঞ।
 
 যখন একজন অভিভাবক তাদের শিশুর উপসর্গ বর্ণনা করেন, আপনাকে অবশ্যই শুধুমাত্র এই সঠিক বাংলা ফরম্যাটে একটি বৈধ JSON অবজেক্ট দিয়ে উত্তর দিতে হবে:
 {
@@ -63,11 +66,25 @@ router.post("/symptoms/analyze", async (req, res) => {
     return;
   }
 
-  const { messages, childAge, language } = parsed.data;
+  const { messages, childAge, childName, childGender, childConditions, language } = parsed.data;
 
   const basePrompt = language === "bn" ? SYSTEM_PROMPT_BN : SYSTEM_PROMPT_EN;
-  const systemContent = childAge
-    ? `${basePrompt}\n\n${language === "bn" ? "শিশুর বয়স:" : "Child's age:"} ${childAge}`
+
+  const childLines: string[] = [];
+  if (language === "bn") {
+    if (childName) childLines.push(`শিশুর নাম: ${childName}`);
+    if (childAge) childLines.push(`শিশুর বয়স: ${childAge}`);
+    if (childGender) childLines.push(`লিঙ্গ: ${childGender === "boy" ? "ছেলে" : childGender === "girl" ? "মেয়ে" : "অন্যান্য"}`);
+    if (childConditions && childConditions.length > 0) childLines.push(`পরিচিত স্বাস্থ্য সমস্যা: ${childConditions.join(", ")}`);
+  } else {
+    if (childName) childLines.push(`Child's name: ${childName}`);
+    if (childAge) childLines.push(`Child's age: ${childAge}`);
+    if (childGender) childLines.push(`Gender: ${childGender}`);
+    if (childConditions && childConditions.length > 0) childLines.push(`Known health conditions: ${childConditions.join(", ")}`);
+  }
+
+  const systemContent = childLines.length > 0
+    ? `${basePrompt}\n\n${childLines.join("\n")}`
     : basePrompt;
 
   const chatMessages: { role: "system" | "user" | "assistant"; content: string }[] = [

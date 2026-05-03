@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Mic, Send, Bot, AlertTriangle, CheckCircle, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/language";
+import { useChildren } from "@/context/children";
 
 interface Message {
   role: "user" | "assistant";
@@ -133,6 +134,7 @@ function AIResponseCard({ analysis, streaming }: { analysis: AIAnalysis | null; 
 
 export default function Assistant() {
   const { language, isBangla } = useLanguage();
+  const { activeChild } = useChildren();
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [pendingAnalysis, setPendingAnalysis] = useState<AIAnalysis | null>(null);
@@ -164,6 +166,12 @@ export default function Assistant() {
         body: JSON.stringify({
           messages: updatedMessages,
           language,
+          ...(activeChild && {
+            childName: activeChild.name,
+            childAge: activeChild.age,
+            childGender: activeChild.gender,
+            childConditions: activeChild.conditions,
+          }),
         }),
       });
 

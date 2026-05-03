@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "wouter";
 import { BellRing, Baby, Hospital, AlertTriangle, Map, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useChildren } from "@/context/children";
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,12 +20,21 @@ const item = {
 };
 
 export default function Home() {
+  const { activeChild } = useChildren();
+
   return (
     <div className="px-4 pb-6 space-y-6">
       {/* Top bar */}
       <header className="flex items-center justify-between mt-2">
-        <div className="flex items-center text-sm font-medium text-muted-foreground">
-          📍 Dhaka, Bangladesh
+        <div>
+          <div className="flex items-center text-sm font-medium text-muted-foreground">
+            📍 Dhaka, Bangladesh
+          </div>
+          {activeChild && (
+            <p className="text-xs text-primary font-semibold mt-0.5">
+              {activeChild.gender === "boy" ? "👦" : activeChild.gender === "girl" ? "👧" : "🧒"} {activeChild.name} · {activeChild.age}
+            </p>
+          )}
         </div>
         <Link href="/alerts" className="relative p-2" data-testid="btn-alerts">
           <BellRing className="w-6 h-6 text-foreground" />
