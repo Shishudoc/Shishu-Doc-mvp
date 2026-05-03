@@ -153,6 +153,22 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+
+          {/* Sponsor Credit */}
+          <motion.div variants={item}>
+            <div className="flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-slate-50 to-blue-50 rounded-[14px] border border-blue-100/60">
+              <div className="flex flex-col items-center text-center">
+                <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest mb-0.5">Sponsored by</p>
+                <p className="text-[13px] font-black text-foreground tracking-tight">Neelima Khan</p>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <div className="w-3 h-px bg-border"></div>
+                  <p className="text-[10px] font-bold text-primary tracking-wide">NKI ENERGY</p>
+                  <div className="w-3 h-px bg-border"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
         </motion.div>
       </div>
     </div>
