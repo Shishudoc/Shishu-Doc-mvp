@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SHISHU SHIELD"
+version = "1.0.0"
+id = "artifacts/shishu-shield"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24419
+
+[services.development]
+run = "pnpm --filter @workspace/shishu-shield run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/shishu-shield", "run", "build" ]
+publicDir = "artifacts/shishu-shield/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24419"
+BASE_PATH = "/"
