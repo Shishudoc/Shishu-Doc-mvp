@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Mic, Send, Bot, AlertTriangle, CheckCircle, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/language";
 
 interface Message {
   role: "user" | "assistant";
@@ -46,7 +47,10 @@ const RISK_CONFIG = {
   },
 };
 
-const quickSymptoms = ["Fever", "Cough", "Cold", "Diarrhea", "Vomiting", "Rash", "Redness", "Stomach pain"];
+const QUICK_SYMPTOMS = {
+  en: ["Fever", "Cough", "Cold", "Diarrhea", "Vomiting", "Rash", "Redness", "Stomach pain"],
+  bn: ["জ্বর", "কাশি", "সর্দি", "ডায়রিয়া", "বমি", "ফুসকুড়ি", "চোখ লাল", "পেট ব্যথা"],
+};
 
 function AIResponseCard({ analysis, streaming }: { analysis: AIAnalysis | null; streaming: boolean }) {
   if (streaming && !analysis) {
@@ -128,6 +132,7 @@ function AIResponseCard({ analysis, streaming }: { analysis: AIAnalysis | null; 
 }
 
 export default function Assistant() {
+  const { language, isBangla } = useLanguage();
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [pendingAnalysis, setPendingAnalysis] = useState<AIAnalysis | null>(null);
@@ -135,6 +140,7 @@ export default function Assistant() {
   const [error, setError] = useState<string | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const quickSymptoms = QUICK_SYMPTOMS[language];
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -157,6 +163,7 @@ export default function Assistant() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: updatedMessages,
+          language,
         }),
       });
 
@@ -232,11 +239,15 @@ export default function Assistant() {
       <header className="px-4 py-4 bg-white border-b border-border sticky top-0 z-10">
         <div className="flex items-center gap-2">
           <Bot className="w-5 h-5 text-primary" />
-          <h1 className="text-xl font-bold text-foreground">AI Health Assistant</h1>
+          <h1 className="text-xl font-bold text-foreground">
+            {isBangla ? "AI স্বাস্থ্য সহকারী" : "AI Health Assistant"}
+          </h1>
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <span className="text-xs text-muted-foreground">Online</span>
+          <span className="text-xs text-muted-foreground">{isBangla ? "অনলাইন" : "Online"}</span>
         </div>
-        <p className="text-xs text-muted-foreground mt-0.5 pl-7">Describe your child's symptoms for an instant analysis</p>
+        <p className="text-xs text-muted-foreground mt-0.5 pl-7">
+          {isBangla ? "আপনার শিশুর উপসর্গ বলুন, তাৎক্ষণিক বিশ্লেষণ পান" : "Describe your child's symptoms for an instant analysis"}
+        </p>
       </header>
 
       {/* Chat Area */}
@@ -251,8 +262,14 @@ export default function Assistant() {
             <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-3">
               <Bot className="w-7 h-7 text-primary" />
             </div>
-            <h3 className="font-semibold text-gray-700 mb-1">How can I help?</h3>
-            <p className="text-sm text-muted-foreground">Tell me your child's symptoms and I'll provide an instant health analysis with practical advice.</p>
+            <h3 className="font-semibold text-gray-700 mb-1">
+              {isBangla ? "আমি কীভাবে সাহায্য করতে পারি?" : "How can I help?"}
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              {isBangla
+                ? "আপনার শিশুর উপসর্গ বলুন, আমি তাৎক্ষণিক স্বাস্থ্য বিশ্লেষণ ও পরামর্শ দেব।"
+                : "Tell me your child's symptoms and I'll provide an instant health analysis with practical advice."}
+            </p>
           </motion.div>
         )}
 
@@ -345,7 +362,7 @@ export default function Assistant() {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Describe your child's symptoms…"
+            placeholder={isBangla ? "আপনার শিশুর উপসর্গ বলুন…" : "Describe your child's symptoms…"}
             disabled={isStreaming}
             className="flex-1 bg-gray-100 rounded-full py-3 px-4 text-sm focus:ring-2 focus:ring-primary focus:outline-none disabled:opacity-60 border-none"
             data-testid="input-chat"

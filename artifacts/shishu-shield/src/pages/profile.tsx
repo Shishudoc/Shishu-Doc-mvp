@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { ChevronRight, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/language";
 
 export default function Profile() {
+  const { language, setLanguage, isBangla } = useLanguage();
   const [voiceMode, setVoiceMode] = useState(true);
   const [lowData, setLowData] = useState(false);
   const [healthAlerts, setHealthAlerts] = useState(true);
@@ -35,8 +37,44 @@ export default function Profile() {
             <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3 px-2">Preferences</h3>
             <div className="bg-white rounded-[16px] overflow-hidden border border-border shadow-sm">
               <div className="flex justify-between items-center p-4 border-b border-border">
-                <span className="text-sm font-medium">Language</span>
-                <span className="text-sm font-semibold text-primary cursor-pointer">বাংলা / English</span>
+                <div>
+                  <span className="text-sm font-medium">{isBangla ? "ভাষা" : "Language"}</span>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    {isBangla ? "AI বাংলায় উত্তর দেবে" : "AI replies in English"}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setLanguage(isBangla ? "en" : "bn")}
+                  data-testid="toggle-language"
+                  className={`relative flex items-center rounded-full border-2 transition-all duration-300 px-1 py-0.5 gap-1 ${
+                    isBangla
+                      ? "bg-primary border-primary"
+                      : "bg-gray-100 border-gray-200"
+                  }`}
+                  style={{ width: 88, height: 32 }}
+                >
+                  <span
+                    className={`text-xs font-bold transition-all duration-300 ${
+                      isBangla ? "text-white" : "text-gray-400"
+                    }`}
+                    style={{ width: 30, textAlign: "center" }}
+                  >
+                    বাং
+                  </span>
+                  <div
+                    className={`w-6 h-6 rounded-full bg-white shadow transition-transform duration-300 absolute ${
+                      isBangla ? "translate-x-[52px]" : "translate-x-[2px]"
+                    }`}
+                  />
+                  <span
+                    className={`text-xs font-bold transition-all duration-300 ${
+                      isBangla ? "text-blue-200" : "text-primary"
+                    }`}
+                    style={{ width: 30, textAlign: "center", marginLeft: "auto" }}
+                  >
+                    EN
+                  </span>
+                </button>
               </div>
               <div className="flex justify-between items-center p-4 border-b border-border">
                 <span className="text-sm font-medium">Voice Mode</span>
