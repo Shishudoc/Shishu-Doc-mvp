@@ -53,32 +53,34 @@ export default function Home() {
   return (
     <div className="pb-6 space-y-0">
       {/* ── SHISHU DOC Brand Header ── */}
-      <div className="bg-gradient-to-br from-[#2F6BFF] to-[#1a4fd8] px-5 pt-10 pb-6">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-8 h-8 bg-white/20 rounded-xl flex items-center justify-center">
-            <ShieldCheck className="w-5 h-5 text-white" strokeWidth={2.5} />
+      <div className="bg-gradient-to-br from-[#2F6BFF] to-[#1a4fd8] px-4 pt-4 pb-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4 text-white" strokeWidth={2.5} />
+            </div>
+            <div>
+              <h1 className="text-[18px] font-black text-white tracking-tight leading-none">SHISHU DOC</h1>
+              <p className="text-blue-100 text-[10px] font-medium leading-tight">{t.tagline}</p>
+            </div>
           </div>
-          <h1 className="text-2xl font-black text-white tracking-tight">SHISHU DOC</h1>
+          <Link href="/alerts" className="relative p-2 bg-white/15 rounded-full" data-testid="btn-alerts">
+            <BellRing className="w-4.5 h-4.5 text-white w-[18px] h-[18px]" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-400 rounded-full border border-white"></span>
+          </Link>
         </div>
-        <p className="text-blue-100 text-xs font-medium">{t.tagline}</p>
 
         {/* Location + child chip */}
-        <div className="flex items-center justify-between mt-4">
-          <div>
-            <div className="flex items-center gap-1.5 text-white/80 text-xs font-medium">
-              <span>📍</span> {t.location}
-            </div>
-            {activeChild && (
-              <div className="mt-1.5 inline-flex items-center gap-1.5 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                {activeChild.gender === "boy" ? "👦" : activeChild.gender === "girl" ? "👧" : "🧒"}
-                {activeChild.name} · {activeChild.age}
-              </div>
-            )}
+        <div className="flex items-center gap-2 mt-2.5 flex-wrap">
+          <div className="flex items-center gap-1 text-white/75 text-[11px] font-medium">
+            <span>📍</span> {t.location}
           </div>
-          <Link href="/alerts" className="relative p-2.5 bg-white/15 rounded-full" data-testid="btn-alerts">
-            <BellRing className="w-5 h-5 text-white" />
-            <span className="absolute top-2 right-2 w-2 h-2 bg-red-400 rounded-full border border-white"></span>
-          </Link>
+          {activeChild && (
+            <div className="inline-flex items-center gap-1 bg-white/15 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+              {activeChild.gender === "boy" ? "👦" : activeChild.gender === "girl" ? "👧" : "🧒"}
+              {activeChild.name} · {activeChild.age}
+            </div>
+          )}
         </div>
       </div>
 
