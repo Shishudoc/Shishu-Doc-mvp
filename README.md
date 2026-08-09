@@ -4,7 +4,7 @@
 > An open-source, digital healthcare consultation & communication bridge designed to streamline medical outreach, remote guidance, and patient care workflows.
 
 
-For queries, partnerships, or academic collaboration regarding Shishu Doc:
+For queries, partnerships, or academic collaboration regarding ShishuDoc:
 
 Organization: ShishuDoc by NKI ENTERPRISES LTD.
 
