@@ -2,7 +2,7 @@
 
 > **Connecting healthcare professionals directly with the public.**  
 > An open-source, digital healthcare consultation & communication bridge designed to streamline medical outreach, remote guidance, and patient care workflows.
-📬 Contact & Support
+
 
 For queries, partnerships, or academic collaboration regarding Shishu Doc:
 
