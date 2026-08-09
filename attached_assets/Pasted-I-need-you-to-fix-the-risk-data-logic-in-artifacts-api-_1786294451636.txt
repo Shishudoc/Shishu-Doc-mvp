@@ -1,0 +1,56 @@
+I need you to fix the risk-data logic in artifacts/api-server/src/routes/bangladesh.ts. 
+Right now this endpoint asks an LLM to invent plausible-looking dengue/heat/air-quality 
+numbers for the 8 divisions. I need it to use real data instead, and only use the LLM 
+to write the alert text, not to generate the numbers.
+
+Do this:
+
+1. HEAT DATA — call the Open-Meteo Weather API (free, no API key needed): 
+   https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lng}&current=temperature_2m,relative_humidity_2m&daily=temperature_2m_max&timezone=auto
+   Use it to get current temperature and humidity for each of the 8 division 
+   coordinates already defined in DIVISIONS_BASE. Compute a heat index from 
+   temperature + humidity (use the standard NOAA heat index formula). Map the 
+   heat index to a level ("low"/"moderate"/"high") using clear thresholds you 
+   define once as named constants (e.g. heat index < 32°C = low, 32-40°C = 
+   moderate, >40°C = high) so the thresholds are visible and adjustable, not 
+   buried in logic.
+
+2. AIR QUALITY DATA — call the Open-Meteo Air Quality API (same account, free): 
+   https://air-quality-api.open-meteo.com/v1/air-quality?latitude={lat}&longitude={lng}&current=pm2_5,pm10,us_aqi
+   Use the us_aqi value directly and map it to a level using standard US AQI 
+   bands (good/moderate/unhealthy/hazardous).
+
+3. DENGUE DATA — there is no free real-time API for this in Bangladesh. Instead, 
+   create a JSON config file at artifacts/api-server/src/data/dengue-baseline.json 
+   with a manually-entered dengue risk level and percent per division per month, 
+   sourced from DGHS (Directorate General of Health Services) published reports. 
+   Add a comment at the top of the file noting it needs manual monthly updates 
+   and linking to https://dghs.gov.bd as the source. Load this file and use the 
+   current month's entry per division.
+
+4. COMBINE INTO A RISK SCORE — write a pure function computeDivisionRisk(heat, 
+   aqi, dengue, month) that combines these into the same DivisionRisk shape the 
+   route already returns. Make the weighting/logic simple and readable — this 
+   needs to be explainable in one sentence, not a black box.
+
+5. KEEP THE LLM, BUT ONLY FOR TEXT — after computing the real risk data for all 
+   8 divisions, make ONE call to gpt-5-mini (same integrations-openai-ai-server 
+   client already used in symptoms.ts) passing the computed numbers, asking it 
+   ONLY to write the aiAlerts and aiAlertsBn arrays (natural-language warnings 
+   in English and Bangla) based on which divisions have high/moderate risk. 
+   The model must not be allowed to change or invent the numeric risk data — 
+   only write the alert sentences describing numbers you already computed.
+
+6. CACHING — keep the existing 30-minute cache pattern, but cache the real data, 
+   not model output.
+
+7. ERROR HANDLING — if Open-Meteo is unreachable for a division, fall back to 
+   the last successfully cached value for that division rather than failing 
+   the whole endpoint, and log a warning.
+
+8. Add a short comment block at the top of the file explaining the real data 
+   sources being used (Open-Meteo Weather + Air Quality APIs, DGHS dengue 
+   baseline) so this is clear to anyone reading the code later.
+
+Do not touch symptoms.ts — that file's use of gpt-5-mini for the AI Child 
+Health Assistant chatbot is correct and should stay as-is.

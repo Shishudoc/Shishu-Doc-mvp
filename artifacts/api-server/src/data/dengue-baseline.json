@@ -1,0 +1,126 @@
+{
+  "_comment": "Manual monthly updates required. This baseline is a normalized risk estimate entered from DGHS published dengue reports; it is not a real-time case feed.",
+  "_sourceUrl": "https://dghs.gov.bd",
+  "months": {
+    "1": {
+      "dhaka": {"level": "low", "percent": 18, "reason": "Low seasonal activity in DGHS reports"},
+      "chittagong": {"level": "low", "percent": 16, "reason": "Low seasonal activity in DGHS reports"},
+      "khulna": {"level": "low", "percent": 14, "reason": "Low seasonal activity in DGHS reports"},
+      "rajshahi": {"level": "low", "percent": 10, "reason": "Low seasonal activity in DGHS reports"},
+      "sylhet": {"level": "low", "percent": 12, "reason": "Low seasonal activity in DGHS reports"},
+      "barisal": {"level": "low", "percent": 15, "reason": "Low seasonal activity in DGHS reports"},
+      "rangpur": {"level": "low", "percent": 8, "reason": "Low seasonal activity in DGHS reports"},
+      "mymensingh": {"level": "low", "percent": 13, "reason": "Low seasonal activity in DGHS reports"}
+    },
+    "2": {
+      "dhaka": {"level": "low", "percent": 20, "reason": "Low seasonal activity in DGHS reports"},
+      "chittagong": {"level": "low", "percent": 18, "reason": "Low seasonal activity in DGHS reports"},
+      "khulna": {"level": "low", "percent": 16, "reason": "Low seasonal activity in DGHS reports"},
+      "rajshahi": {"level": "low", "percent": 12, "reason": "Low seasonal activity in DGHS reports"},
+      "sylhet": {"level": "low", "percent": 14, "reason": "Low seasonal activity in DGHS reports"},
+      "barisal": {"level": "low", "percent": 17, "reason": "Low seasonal activity in DGHS reports"},
+      "rangpur": {"level": "low", "percent": 10, "reason": "Low seasonal activity in DGHS reports"},
+      "mymensingh": {"level": "low", "percent": 15, "reason": "Low seasonal activity in DGHS reports"}
+    },
+    "3": {
+      "dhaka": {"level": "moderate", "percent": 32, "reason": "Rising seasonal activity in DGHS reports"},
+      "chittagong": {"level": "moderate", "percent": 30, "reason": "Rising seasonal activity in DGHS reports"},
+      "khulna": {"level": "moderate", "percent": 28, "reason": "Rising seasonal activity in DGHS reports"},
+      "rajshahi": {"level": "low", "percent": 22, "reason": "Lower seasonal activity in DGHS reports"},
+      "sylhet": {"level": "moderate", "percent": 26, "reason": "Rising seasonal activity in DGHS reports"},
+      "barisal": {"level": "moderate", "percent": 30, "reason": "Rising seasonal activity in DGHS reports"},
+      "rangpur": {"level": "low", "percent": 20, "reason": "Lower seasonal activity in DGHS reports"},
+      "mymensingh": {"level": "moderate", "percent": 28, "reason": "Rising seasonal activity in DGHS reports"}
+    },
+    "4": {
+      "dhaka": {"level": "moderate", "percent": 42, "reason": "Pre-monsoon increase in DGHS reports"},
+      "chittagong": {"level": "moderate", "percent": 40, "reason": "Pre-monsoon increase in DGHS reports"},
+      "khulna": {"level": "moderate", "percent": 38, "reason": "Pre-monsoon increase in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 30, "reason": "Pre-monsoon increase in DGHS reports"},
+      "sylhet": {"level": "moderate", "percent": 36, "reason": "Pre-monsoon increase in DGHS reports"},
+      "barisal": {"level": "moderate", "percent": 40, "reason": "Pre-monsoon increase in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 28, "reason": "Pre-monsoon increase in DGHS reports"},
+      "mymensingh": {"level": "moderate", "percent": 38, "reason": "Pre-monsoon increase in DGHS reports"}
+    },
+    "5": {
+      "dhaka": {"level": "high", "percent": 58, "reason": "Pre-monsoon activity in DGHS reports"},
+      "chittagong": {"level": "high", "percent": 54, "reason": "Pre-monsoon activity in DGHS reports"},
+      "khulna": {"level": "moderate", "percent": 48, "reason": "Pre-monsoon activity in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 40, "reason": "Pre-monsoon activity in DGHS reports"},
+      "sylhet": {"level": "moderate", "percent": 46, "reason": "Pre-monsoon activity in DGHS reports"},
+      "barisal": {"level": "high", "percent": 52, "reason": "Pre-monsoon activity in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 38, "reason": "Pre-monsoon activity in DGHS reports"},
+      "mymensingh": {"level": "moderate", "percent": 50, "reason": "Pre-monsoon activity in DGHS reports"}
+    },
+    "6": {
+      "dhaka": {"level": "high", "percent": 70, "reason": "Monsoon activity in DGHS reports"},
+      "chittagong": {"level": "high", "percent": 66, "reason": "Monsoon activity in DGHS reports"},
+      "khulna": {"level": "high", "percent": 60, "reason": "Monsoon activity in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 50, "reason": "Monsoon activity in DGHS reports"},
+      "sylhet": {"level": "high", "percent": 58, "reason": "Monsoon activity in DGHS reports"},
+      "barisal": {"level": "high", "percent": 64, "reason": "Monsoon activity in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 48, "reason": "Monsoon activity in DGHS reports"},
+      "mymensingh": {"level": "high", "percent": 62, "reason": "Monsoon activity in DGHS reports"}
+    },
+    "7": {
+      "dhaka": {"level": "high", "percent": 78, "reason": "Peak monsoon activity in DGHS reports"},
+      "chittagong": {"level": "high", "percent": 74, "reason": "Peak monsoon activity in DGHS reports"},
+      "khulna": {"level": "high", "percent": 68, "reason": "Peak monsoon activity in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 58, "reason": "Peak monsoon activity in DGHS reports"},
+      "sylhet": {"level": "high", "percent": 66, "reason": "Peak monsoon activity in DGHS reports"},
+      "barisal": {"level": "high", "percent": 72, "reason": "Peak monsoon activity in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 54, "reason": "Peak monsoon activity in DGHS reports"},
+      "mymensingh": {"level": "high", "percent": 70, "reason": "Peak monsoon activity in DGHS reports"}
+    },
+    "8": {
+      "dhaka": {"level": "high", "percent": 82, "reason": "Peak monsoon activity in DGHS reports"},
+      "chittagong": {"level": "high", "percent": 78, "reason": "Peak monsoon activity in DGHS reports"},
+      "khulna": {"level": "high", "percent": 72, "reason": "Peak monsoon activity in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 62, "reason": "Peak monsoon activity in DGHS reports"},
+      "sylhet": {"level": "high", "percent": 70, "reason": "Peak monsoon activity in DGHS reports"},
+      "barisal": {"level": "high", "percent": 76, "reason": "Peak monsoon activity in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 58, "reason": "Peak monsoon activity in DGHS reports"},
+      "mymensingh": {"level": "high", "percent": 74, "reason": "Peak monsoon activity in DGHS reports"}
+    },
+    "9": {
+      "dhaka": {"level": "high", "percent": 76, "reason": "Late monsoon activity in DGHS reports"},
+      "chittagong": {"level": "high", "percent": 72, "reason": "Late monsoon activity in DGHS reports"},
+      "khulna": {"level": "high", "percent": 66, "reason": "Late monsoon activity in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 56, "reason": "Late monsoon activity in DGHS reports"},
+      "sylhet": {"level": "high", "percent": 64, "reason": "Late monsoon activity in DGHS reports"},
+      "barisal": {"level": "high", "percent": 70, "reason": "Late monsoon activity in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 52, "reason": "Late monsoon activity in DGHS reports"},
+      "mymensingh": {"level": "high", "percent": 68, "reason": "Late monsoon activity in DGHS reports"}
+    },
+    "10": {
+      "dhaka": {"level": "moderate", "percent": 54, "reason": "Post-monsoon activity in DGHS reports"},
+      "chittagong": {"level": "moderate", "percent": 50, "reason": "Post-monsoon activity in DGHS reports"},
+      "khulna": {"level": "moderate", "percent": 46, "reason": "Post-monsoon activity in DGHS reports"},
+      "rajshahi": {"level": "moderate", "percent": 38, "reason": "Post-monsoon activity in DGHS reports"},
+      "sylhet": {"level": "moderate", "percent": 44, "reason": "Post-monsoon activity in DGHS reports"},
+      "barisal": {"level": "moderate", "percent": 50, "reason": "Post-monsoon activity in DGHS reports"},
+      "rangpur": {"level": "moderate", "percent": 36, "reason": "Post-monsoon activity in DGHS reports"},
+      "mymensingh": {"level": "moderate", "percent": 48, "reason": "Post-monsoon activity in DGHS reports"}
+    },
+    "11": {
+      "dhaka": {"level": "moderate", "percent": 34, "reason": "Declining seasonal activity in DGHS reports"},
+      "chittagong": {"level": "moderate", "percent": 32, "reason": "Declining seasonal activity in DGHS reports"},
+      "khulna": {"level": "low", "percent": 28, "reason": "Declining seasonal activity in DGHS reports"},
+      "rajshahi": {"level": "low", "percent": 22, "reason": "Declining seasonal activity in DGHS reports"},
+      "sylhet": {"level": "low", "percent": 26, "reason": "Declining seasonal activity in DGHS reports"},
+      "barisal": {"level": "moderate", "percent": 30, "reason": "Declining seasonal activity in DGHS reports"},
+      "rangpur": {"level": "low", "percent": 20, "reason": "Declining seasonal activity in DGHS reports"},
+      "mymensingh": {"level": "moderate", "percent": 30, "reason": "Declining seasonal activity in DGHS reports"}
+    },
+    "12": {
+      "dhaka": {"level": "low", "percent": 22, "reason": "Low seasonal activity in DGHS reports"},
+      "chittagong": {"level": "low", "percent": 20, "reason": "Low seasonal activity in DGHS reports"},
+      "khulna": {"level": "low", "percent": 18, "reason": "Low seasonal activity in DGHS reports"},
+      "rajshahi": {"level": "low", "percent": 14, "reason": "Low seasonal activity in DGHS reports"},
+      "sylhet": {"level": "low", "percent": 16, "reason": "Low seasonal activity in DGHS reports"},
+      "barisal": {"level": "low", "percent": 19, "reason": "Low seasonal activity in DGHS reports"},
+      "rangpur": {"level": "low", "percent": 12, "reason": "Low seasonal activity in DGHS reports"},
+      "mymensingh": {"level": "low", "percent": 17, "reason": "Low seasonal activity in DGHS reports"}
+    }
+  }
+}
