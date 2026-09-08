@@ -13,10 +13,7 @@ The vision is simple:
 
 ---
 
-
-
-
-🌍 The Problem
+**🌍 The Problem**
 
 Climate change is increasing health risks for children through:
 
@@ -32,7 +29,7 @@ ShishuDoc is designed to connect environmental risk intelligence with healthcare
 
 ---
 
-💡 The Solution
+**💡 The Solution**
 
 ShishuDoc brings four capabilities together:
 
@@ -52,7 +49,7 @@ Provide multilingual, AI-assisted health guidance while using safety rules and h
 
 Connect families with verified healthcare professionals through telemedicine.
 
-Climate & Environmental Data
+ Climate & Environmental Data
             ↓
      Climate-Health Risk
             ↓
@@ -68,7 +65,7 @@ Climate & Environmental Data
 
 ---
 
-🩺 Rapid Healthcare Access
+**🩺 Rapid Healthcare Access**
 
 Telemedicine is a core part of ShishuDoc — not an add-on.
 
@@ -90,7 +87,7 @@ This is a deployment target to be validated through pilot testing, not a current
 
 ---
 
-🌡️ Climate-Health Intelligence
+**🌡️ Climate-Health Intelligence**
 
 ShishuDoc is designed to connect environmental data with child-health risks, including:
 
@@ -117,7 +114,7 @@ ShishuDoc should never use AI to invent real-world climate, disease or health me
 
 ---
 
-🤖 Responsible AI
+**🤖 Responsible AI**
 
 AI is designed to support, not replace, healthcare professionals.
 
@@ -136,7 +133,7 @@ Clinical decisions remain with qualified healthcare professionals.
 
 ---
 
-📱 Built for Real-World Conditions
+**📱 Built for Real-World Conditions**
 
 ShishuDoc is designed for environments where connectivity and resources may be limited.
 
@@ -151,7 +148,7 @@ The platform prioritizes:
 
 ---
 
-🔐 Child Safety & Privacy
+**🔐 Child Safety & Privacy**
 
 Because ShishuDoc is designed around children’s health, privacy and safeguarding are fundamental requirements.
 
@@ -171,7 +168,7 @@ Public analytics should use aggregated, privacy-preserving information only.
 
 ---
 
-📊 Measuring Impact
+**📊 Measuring Impact**
 
 ShishuDoc is designed to measure real-world outcomes rather than simply counting features.
 
@@ -188,7 +185,7 @@ Potential indicators include:
 * AI safety incidents
 
 ---
-🧪 Current Status
+**🧪 Current Status**
 
 ShishuDoc is an early-stage MVP/prototype.
 
@@ -203,7 +200,7 @@ Currently demonstrated
 * Mobile-first application
 * Backend API infrastructure
 
-Under development
+**Under development**
 
 * Real climate/environmental data
 * Verified doctor network
@@ -212,12 +209,12 @@ Under development
 * Validated climate-health risk models
 * Real-time alerts
 * Public impact dashboard
-
-Planned
-
+* Air-quality health intelligence
 * Disease forecasting
 * Heat-health prediction
-* Air-quality health intelligence
+
+**Planned**
+
 * Health-facility vulnerability mapping
 * Public-health integrations
 * DHIS2-compatible workflows
@@ -226,7 +223,7 @@ Planned
 
 ---
 
-🛠️ Technology
+**🛠️ Technology**
 
 ShishuDoc is built as a TypeScript monorepo using:
 
@@ -244,7 +241,7 @@ ShishuDoc is built as a TypeScript monorepo using:
 
 ---
 
-🌱 Open Source
+**🌱 Open Source**
 
 ShishuDoc is developed as an open-source project so that the technology can be adapted by researchers, developers, healthcare organizations, NGOs, public-health institutions and other communities.
 
