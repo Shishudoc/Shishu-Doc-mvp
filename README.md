@@ -1,31 +1,20 @@
 # 🩺 Shishu Doc (MVP)
 
-> **Connecting healthcare professionals directly with the public.**  
-> An open-source, digital healthcare consultation & communication bridge designed to streamline medical outreach, remote guidance, and patient care workflows.
-
-
-For queries, partnerships, or academic collaboration regarding ShishuDoc:
-
-Organization: ShishuDoc by NKI ENTERPRISES LTD.
-
-GitHub: @ShishuDoc
-
----
-🩺 ShishuDoc
-
-Climate-Intelligent Child Health & Telemedicine
-
-Predict. Prevent. Triage. Connect.
-
-ShishuDoc is an open-source digital health platform for children in climate-vulnerable and low-resource communities, starting with Bangladesh.
+> **Climate-Intelligent Child Health & Telemedicine**  
+> ShishuDoc is an open-source digital health platform for children in climate-vulnerable and low-resource communities, starting with Bangladesh.
 
 It combines climate-health intelligence, early warnings, AI-assisted child-health guidance, and rapid access to healthcare professionals in one platform.
 
 The vision is simple:
 
-Use climate and environmental intelligence to help prevent child-health risks, while making professional healthcare easier to reach when a child needs it.
+> **Use climate and environmental intelligence to help prevent child-health risks, while making professional healthcare easier to reach when a child needs it.**
 
-⸻
+
+
+---
+
+
+
 
 🌍 The Problem
 
@@ -41,7 +30,7 @@ Families often receive healthcare only after symptoms appear.
 
 ShishuDoc is designed to connect environmental risk intelligence with healthcare access so families can understand risks earlier and act sooner.
 
-⸻
+---
 
 💡 The Solution
 
@@ -77,7 +66,7 @@ Climate & Environmental Data
             ↓
     Telemedicine / Referral
 
-⸻
+---
 
 🩺 Rapid Healthcare Access
 
@@ -99,7 +88,7 @@ Median time from requesting a doctor to connection: ≤ 3 minutes.
 
 This is a deployment target to be validated through pilot testing, not a current performance claim.
 
-⸻
+---
 
 🌡️ Climate-Health Intelligence
 
@@ -126,7 +115,7 @@ Real-world risk information should come from validated, documented data sources 
 
 ShishuDoc should never use AI to invent real-world climate, disease or health measurements.
 
-⸻
+---
 
 🤖 Responsible AI
 
@@ -145,7 +134,7 @@ Emergency warning signs should be escalated immediately.
 
 Clinical decisions remain with qualified healthcare professionals.
 
-⸻
+---
 
 📱 Built for Real-World Conditions
 
@@ -160,7 +149,7 @@ The platform prioritizes:
 * 🌍 Localized information
 * ♿ Accessible interfaces
 
-⸻
+---
 
 🔐 Child Safety & Privacy
 
@@ -180,7 +169,7 @@ The production platform is being designed around:
 
 Public analytics should use aggregated, privacy-preserving information only.
 
-⸻
+---
 
 📊 Measuring Impact
 
@@ -198,8 +187,7 @@ Potential indicators include:
 * Geographic coverage
 * AI safety incidents
 
-⸻
-
+---
 🧪 Current Status
 
 ShishuDoc is an early-stage MVP/prototype.
@@ -236,7 +224,7 @@ Planned
 * Offline-first capabilities
 * Expansion beyond Bangladesh
 
-⸻
+---
 
 🛠️ Technology
 
@@ -254,7 +242,7 @@ ShishuDoc is built as a TypeScript monorepo using:
 * React Leaflet
 * AI integration
 
-⸻
+---
 
 🌱 Open Source
 
@@ -262,9 +250,9 @@ ShishuDoc is developed as an open-source project so that the technology can be a
 
 The project is released under the MIT License.
 
-⸻
+---
 
-🗺️ Roadmap
+**🗺️ Roadmap**
 
 MVP
  ↓
@@ -282,9 +270,9 @@ Public-Health Integration
  ↓
 Scale Across Climate-Vulnerable Communities
 
-⸻
+---
 
-🇧🇩 Bangladesh First
+**🇧🇩 Bangladesh First**
 
 Bangladesh is the initial focus of ShishuDoc because of its combination of:
 
@@ -297,9 +285,9 @@ Bangladesh is the initial focus of ShishuDoc because of its combination of:
 
 The underlying architecture is designed to be adaptable to other climate-vulnerable regions.
 
-⸻
+---
 
-🤝 Vision
+**🤝 Vision**
 
 ShishuDoc aims to move child healthcare from being primarily reactive toward being:
 
@@ -307,9 +295,9 @@ Predictive. Preventive. Accessible. Climate-resilient.
 
 Every child should have access to healthcare — and every community should have the information needed to prepare before climate-related health risks become emergencies.
 
-⸻
+---
 
-📚 Documentation
+**📚 Documentation**
 
 Detailed documentation will cover:
 
@@ -328,9 +316,9 @@ Detailed documentation will cover:
 
 See the /docs directory for technical documentation.
 
-⸻
+---
 
-🏢 Organization
+**🏢 Organization**
 
 ShishuDoc
 An open-source climate-intelligent child-health initiative by NKI ENTERPRISES LTD.
@@ -339,8 +327,14 @@ Focus: Bangladesh → Global climate-vulnerable communities
 
 Core technologies: AI · Climate Intelligence · Child Health · Telemedicine · Early Warning · Open Source
 
-⸻
+---
 
-❤️ ShishuDoc
+**❤️ ShishuDoc**
 
-Predict. Prevent. Triage. Connect.
+For queries, partnerships, or academic collaboration regarding ShishuDoc:
+
+Organization: ShishuDoc by NKI ENTERPRISES LTD.
+
+GitHub: @ShishuDoc
+
+Instagram: @NKIENERGY
