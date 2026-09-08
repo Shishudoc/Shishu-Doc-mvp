@@ -49,19 +49,24 @@ Provide multilingual, AI-assisted health guidance while using safety rules and h
 
 Connect families with verified healthcare professionals through telemedicine.
 
- Climate & Environmental Data
-            ↓
-     Climate-Health Risk
-            ↓
-     Early Warning
-            ↓
-       Child / Family
-            ↓
-    AI-Assisted Triage
-            ↓
-   Healthcare Professional
-            ↓
-    Telemedicine / Referral
+
+
+
+### It will look conceptually like:
+**🌡️ Climate & Environmental Data**  
+↓  
+**🧠 Climate-Health Risk Intelligence**  
+↓  
+**🚨 Early Warning & Early Action**  
+↓  
+**👨‍👩‍👧 Child / Family**  
+↓  
+**🤖 AI-Assisted Triage**  
+↓  
+**👩‍⚕️ Healthcare Professional**  
+↓  
+**📱 Telemedicine / Referral**
+
 
 ---
 
