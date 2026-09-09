@@ -164,7 +164,7 @@ export default function Home() {
                 <p className="text-[13px] font-black text-foreground tracking-tight">Neelima Khan</p>
                 <div className="flex items-center gap-1.5 mt-1">
                   <div className="w-3 h-px bg-border"></div>
-                  <p className="text-[10px] font-bold text-primary tracking-wide">NKI ENERGY</p>
+                  <p className="text-[10px] font-bold text-primary tracking-wide">NKI ENTERPRISES LTD.</p>
                   <div className="w-3 h-px bg-border"></div>
                 </div>
               </div>

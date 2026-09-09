@@ -160,4 +160,5 @@ overrides:
   esbuild: "0.27.3"
   "micromatch>picomatch": "2.3.2"
   "vite>picomatch": "4.0.5"
-  "postcss>nanoid": "3.3.18"
+  "vite>postcss": "8.5.26"
+  "orval>js-yaml": "4.3.1"
