@@ -86,7 +86,7 @@ The platform is being designed to help families reach an appropriate healthcare 
 
 ⚡ Pilot target
 
-Median time from requesting a doctor to connection: ≤ 3 minutes.
+Median time from requesting a doctor to connection: ≤ 4 minutes.
 
 This is a deployment target to be validated through pilot testing, not a current performance claim.
 
